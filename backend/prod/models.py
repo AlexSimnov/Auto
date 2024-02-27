@@ -39,6 +39,13 @@ class Task(models.Model):
     def __str__(self) -> str:
         return f'{self.title}'
 
+    def delete(self, *args, **kwargs):
+        if self.executor:
+            self.executor.task_delete += 1
+            self.executor.save()
+
+        super(Task, self).delete(*args, **kwargs)
+
 
 class Project(models.Model):
     name = models.CharField(
