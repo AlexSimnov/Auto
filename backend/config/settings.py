@@ -10,8 +10,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = False
 
-CSRF_TRUSTED_ORIGINS = [('http://'+os.environ.get('CSRF_TRUSTED_ORIGINS')),
-                        ('https://'+os.environ.get('CSRF_TRUSTED_ORIGINS')),]
+CSRF_HTTP = 'http://' + os.environ.get('CSRF_TRUSTED_ORIGINS')
+CSRF_HTTPS = 'https://' + os.environ.get('CSRF_TRUSTED_ORIGINS')
+
+
+CSRF_TRUSTED_ORIGINS = [CSRF_HTTP, CSRF_HTTPS]
 
 ALLOWED_HOSTS = os.environ.get('ALLHOST').split()
 
