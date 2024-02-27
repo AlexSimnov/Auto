@@ -10,10 +10,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = False
 
-CSRF_TRUSTED_ORIGINS = [('http://'+os.environ.get('ALLHOST')),
-                        ('https://'+os.environ.get('ALLHOST')),]
+CSRF_TRUSTED_ORIGINS = [('http://'+os.environ.get('CSRF_TRUSTED_ORIGINS')),
+                        ('https://'+os.environ.get('CSRF_TRUSTED_ORIGINS')),]
 
-ALLOWED_HOSTS = [os.environ.get('ALLHOST')]
+ALLOWED_HOSTS = os.environ.get('ALLHOST').split()
 
 
 INSTALLED_APPS = [
