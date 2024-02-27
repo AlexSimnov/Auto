@@ -14,6 +14,7 @@ celery = "^5.3.6"
 redis = "^5.0.1"
 djangorestframework = "^3.14.0"
 gunicorn = "^21.2.0"
+drf-spectacular = "^0.27.1"
 
 
 [tool.poetry.group.dev.dependencies]
